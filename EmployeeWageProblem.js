@@ -5,7 +5,6 @@
     if(empCheck==IS_ABSENT)
     {
         console.log("EMPLOYEE IS ABSENT.");
-        return;
     }
     else
     {
