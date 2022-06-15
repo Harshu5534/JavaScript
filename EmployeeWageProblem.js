@@ -31,7 +31,7 @@ const WAGE_PER_HOUR=20;
     let empCheck=Math.floor(Math.random() * 10) % 3;
     let empHrs=getWorkingHours(empCheck);
     let empWage=empHrs*WAGE_PER_HOUR;
-    console.log("Employee Wage: " + empWage);
+    console.log("Hours: " +empHrs+ "\nEmployee Wage: " + empWage);
 }
 
 
