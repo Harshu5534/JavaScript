@@ -73,11 +73,17 @@ const MAX_HRS_IN_MONTH=160;
     console.log("\nUC7B - Daily Wage Map");
     console.log(mapDayWithWageArr);
 
-    //UC 7C-Show Days When Full Time Wage of 160 were earned
+    //UC 7C-Show Days When Full Time Wage of 160 Were Earned
     function fulltimeWage(dailyWage) {
         return dailyWage.includes("160");
     }
     let fullDayWageArr = mapDayWithWageArr.filter(fulltimeWage);
     console.log("\nUC7C - Daily Wage Filter When Fulltime Wage Earned");
     console.log(fullDayWageArr);
+
+    //UC 7D - Find The First Occurrence When Full Time Wage Was Earned Usinf Find Function 
+    function findFulltimeWage(dailyWage){
+        return dailyWage.includes("160");
+    }
+    console.log("\nUC 7D - First Time Fulltime Wage Was Earned On Day: "+ mapDayWithWageArr.find(findFulltimeWage));
 }
