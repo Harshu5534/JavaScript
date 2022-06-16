@@ -39,6 +39,7 @@ const MAX_HRS_IN_MONTH=160;
     let totalWorkingDays=0;
     let empDailyWageArr=new Array();
     let empDailyWageMap=new Map();
+    let empDailyHrsMap=new Map();
    while(totalEmpHrs<= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
     {
         totalWorkingDays++;
@@ -46,6 +47,8 @@ const MAX_HRS_IN_MONTH=160;
         let empHrs=getWorkingHours(empCheck);
         totalEmpHrs += empHrs;;
         empDailyWageArr.push(calcDailyWage(empHrs));
+        empDailyHrsMap.set(totalWorkingDays,empHrs);
+        empDailyWageMap.set(totalWorkingDays,calcDailyWage(empHrs));
     }
     let empWage = calcDailyWage(totalEmpHrs);
     console.log("UC6 - Total Days: " + totalWorkingDays + "\nTotal Hours: " + totalEmpHrs +"\nEmployee Wage: " + empWage);
@@ -108,7 +111,7 @@ const MAX_HRS_IN_MONTH=160;
     console.log("\nUC 7G - Number Of Days Employee Worked: "+empDailyWageArr.reduce(totalDaysWorked, 0));
 
     //UC 8 - Map Function
-    //console.log("\nUC 8 - Employee Wage Map TotalHrs: "+Array.from(empDailyWageMap.Values()).reduce(totalWages,0));
+    console.log("\nUC 8 - Employee Wage Map TotalHrs: "+Array.from(empDailyWageMap.values()).reduce(totalWages,0));
 
     //UC 9 - Arrow Functions
     const findTotal = (totalVal, dailyVal) =>{
